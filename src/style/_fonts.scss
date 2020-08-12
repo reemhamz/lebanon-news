@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300&display=swap');
+
+$rowdiesFont: 'Rowdies', cursive; 
+$robotoFont: 'Roboto Slab', serif;
+
+h1 {
+    font-family: $rowdiesFont;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-size: 3rem;
+    text-shadow: 5px 5px 0px $softPink;
+    color: $crimson;
+}
+
+li {
+    font-size: 1.3rem;
+    list-style: none;
+}

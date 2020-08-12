@@ -14,7 +14,7 @@ function App() {
       url: redditURL,
     }).then((res) => {
       // console.log(res.data.data)
-      setRedditHead(res.data.data)
+      setRedditHead(res.data.data.children);
     });
   }, []);
 
@@ -27,7 +27,29 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(redditHead.children)}
+      <h1>Lebanews 🌲📰</h1>
+      <ul class="rLebanonCall">
+        {redditHead.map((data) => {
+          console.log(data.data);
+          if (
+            data.data.link_flair_text === "Politics" ||
+            data.data.link_flair_text === "News Articles" ||
+            data.data.link_flair_text === "Economy"
+          ) {
+            return (
+              <>
+                <a href={data.data.url}>
+                  <li>
+                    
+                    <span>🍃</span> {data.data.title}
+                  </li>
+                </a>
+                <hr />
+              </>
+            );
+          }
+        })}
+      </ul>
     </div>
   );
 }

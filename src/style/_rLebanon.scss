@@ -1,0 +1,17 @@
+.rLebanonCall {
+  padding: 20px;
+  border-radius: 40px;
+  li {
+    display: flex;
+    span {
+      margin-right: 30px;
+    }
+  }
+  hr {
+    height: 1px;
+    border: 0;
+    // color:red;
+    background-color: $teal;
+    // width: 80%;
+  }
+}
