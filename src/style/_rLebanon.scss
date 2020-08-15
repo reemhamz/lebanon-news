@@ -3,15 +3,15 @@
   border-radius: 40px;
   li {
     display: flex;
+    align-items: center;
+    height: 80px;
     span {
       margin-right: 30px;
     }
   }
-  hr {
-    height: 1px;
-    border: 0;
-    // color:red;
-    background-color: $teal;
-    // width: 80%;
-  }
+
+}
+
+input button {
+  color: blue;
 }

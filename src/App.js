@@ -7,6 +7,7 @@ function App() {
   const [redditHead, setRedditHead] = useState([]);
   const [redditTitle, setRedditTitle] = useState("");
   const [redditFlair, setRedditFlair] = useState("");
+  const [homeLink, setHomeLink] = useState("https://reddit.com");
   const redditURL = `https://www.reddit.com/r/lebanon.json`;
   useEffect(() => {
     axios({
@@ -30,7 +31,7 @@ function App() {
       <h1>Lebanews 🌲📰</h1>
       <ul class="rLebanonCall">
         {redditHead.map((data) => {
-          console.log(data.data);
+          // console.log(data.data.title.length);
           if (
             data.data.link_flair_text === "Politics" ||
             data.data.link_flair_text === "News Articles" ||
@@ -38,13 +39,18 @@ function App() {
           ) {
             return (
               <>
-                <a href={data.data.url}>
+                <a href={homeLink + data.data.permalink} target="_blank" rel="noreferrer noopener">
                   <li>
-                    
-                    <span>🍃</span> {data.data.title}
+                    <span>🍃</span> {data.data.title.length < 100 ? (
+                    data.data.title
+                    ):
+                    (
+                    <span>{data.data.title.substr(0,90)}...<em>read more</em></span>
+                    )}
                   </li>
                 </a>
                 <hr />
+                <input type="file"/>
               </>
             );
           }

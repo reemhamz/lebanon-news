@@ -205,6 +205,26 @@ h1 {
 li {
   font-size: 1.3rem;
   list-style: none;
+  font-family: "Roboto Slab", serif;
+}
+
+li:hover {
+  background-color: #f5fdfc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: #ebecf1;
 }
 
 .rLebanonCall {
@@ -216,16 +236,14 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
 }
 
 .rLebanonCall li span {
   margin-right: 30px;
-}
-
-.rLebanonCall hr {
-  height: 1px;
-  border: 0;
-  background-color: #2fc4b2;
 }
 
 body {
@@ -251,7 +269,6 @@ body {
 
 .App {
   background-color: white;
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
