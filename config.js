@@ -1,0 +1,6 @@
+export const TWITTER_KEY = "wJEixeryqkoW6Yt908LaqmfMe";
+export const TWITTER_SECRET_KEY =
+         "hzHhFKbmSSuGgExce3GrIA3rSMKBPZdA4SV4dr7L2lVqVOfeYf";
+
+export const BEARER_TOKEN =
+         "AAAAAAAAAAAAAAAAAAAAAC5TGwEAAAAAf%2Bz32CygLQIsb72yndhv9N7j3yA%3D2I0vKjA190W3Sb9F6DkoV8YHlNLtGy6ZFxE24xNsrJhb8nNRXI";
