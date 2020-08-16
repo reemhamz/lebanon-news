@@ -2,14 +2,17 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./style/App.scss";
 import axios from "axios";
+import TwitterCall from "./components/TwitterCall.js";
 
 function App() {
   const [redditHead, setRedditHead] = useState([]);
   const [redditTitle, setRedditTitle] = useState("");
   const [redditFlair, setRedditFlair] = useState("");
   const [homeLink, setHomeLink] = useState("https://reddit.com");
-  const redditURL = `https://www.reddit.com/r/lebanon.json`;
+
+  // Reddit HTTP request
   useEffect(() => {
+    const redditURL = `https://www.reddit.com/r/lebanon.json`;
     axios({
       method: "get",
       url: redditURL,
@@ -19,17 +22,18 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   setRedditFlair(redditHead.link_flair_text);
-  //   if (redditFlair === "Politics" || redditFlair === "News Articles") {
-  //     setRedditTitle(redditHead.title);
-  //   }
-  // });
+  useEffect(() => {
+    setRedditFlair(redditHead.link_flair_text);
+    if (redditFlair === "Politics" || redditFlair === "News Articles") {
+      setRedditTitle(redditHead.title);
+    }
+  });
 
   return (
     <div className="App">
       <h1>Lebanews 🌲📰</h1>
-      <ul class="rLebanonCall">
+      <TwitterCall />
+      <ul className="rLebanonCall">
         {redditHead.map((data) => {
           // console.log(data.data.title.length);
           if (
@@ -39,18 +43,23 @@ function App() {
           ) {
             return (
               <>
-                <a href={homeLink + data.data.permalink} target="_blank" rel="noreferrer noopener">
+                <a
+                  href={homeLink + data.data.permalink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   <li>
-                    <span>🍃</span> {data.data.title.length < 100 ? (
-                    data.data.title
-                    ):
-                    (
-                    <span>{data.data.title.substr(0,90)}...<em>read more</em></span>
+                    <span>🍃</span>{" "}
+                    {data.data.title.length < 100 ? (
+                      data.data.title
+                    ) : (
+                      <span>
+                        {data.data.title.substr(0, 90)}...<em>read more</em>
+                      </span>
                     )}
                   </li>
                 </a>
                 <hr />
-                <input type="file"/>
               </>
             );
           }
