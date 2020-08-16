@@ -1,28 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { TWITTER_KEY, TWITTER_SECRET_KEY, BEARER_TOKEN } from "../../config";
 
 
 function TwitterCall() {
     const [twitterHead, setRedditHead] = useState('');
 
-    const twitterURL = "https://stream.twitter.com/1.1/";
-
-    const twitterKey = TWITTER_KEY;
-    const twitterSecretKey = TWITTER_SECRET_KEY;
-    const bearerToken = BEARER_TOKEN;
-    
-    // useEffect(() => {
-    //   axios({
-    //     method: "get",
-    //     url: twitterURL,
-    //   }).then((res) => {
-    //     console.log(res)
-    //     ;
-    //   });
-    // }, []);
-    
+    const twitterAPIKey = "wJEixeryqkoW6Yt908LaqmfMe";
+    const twitterAPISecretKey =
+        "hzHhFKbmSSuGgExce3GrIA3rSMKBPZdA4SV4dr7L2lVqVOfeYf";
+    const twitterBearerToken =
+      "AAAAAAAAAAAAAAAAAAAAAC5TGwEAAAAAf%2Bz32CygLQIsb72yndhv9N7j3yA%3D2I0vKjA190W3Sb9F6DkoV8YHlNLtGy6ZFxE24xNsrJhb8nNRXI";
 
         return (
             <div className="App">

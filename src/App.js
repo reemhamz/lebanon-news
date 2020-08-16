@@ -15,6 +15,7 @@ function App() {
       method: "get",
       url: redditURL,
     }).then((res) => {
+      // console.log(res.data.data)
       setRedditHead(res.data.data.children);
     });
   }, []);
@@ -32,6 +33,7 @@ function App() {
       <TwitterCall />
       <ul class="rLebanonCall">
         {redditHead.map((data) => {
+          // console.log(data.data.title.length);
           if (
             data.data.link_flair_text === "Politics" ||
             data.data.link_flair_text === "News Articles" ||
