@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./style/App.scss";
 import axios from "axios";
-import TwitterCall from "./components/TwitterCall";
 
 function App() {
   const [redditHead, setRedditHead] = useState([]);
@@ -30,7 +29,6 @@ function App() {
   return (
     <div className="App">
       <h1>Lebanews 🌲📰</h1>
-      <TwitterCall />
       <ul class="rLebanonCall">
         {redditHead.map((data) => {
           // console.log(data.data.title.length);
@@ -52,7 +50,7 @@ function App() {
                   </li>
                 </a>
                 <hr />
-                
+                <input type="file"/>
               </>
             );
           }
