@@ -246,6 +246,10 @@ hr {
   margin-right: 30px;
 }
 
+input button {
+  color: blue;
+}
+
 body {
   min-height: 100vh;
   margin: 0 auto;
@@ -269,6 +273,7 @@ body {
 
 .App {
   background-color: white;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
