@@ -5,7 +5,7 @@
 
 .articlesView {
   background-color: white;
-  width: 70vw;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -19,6 +19,7 @@
 }
 
 .newsResults {
+  width:100%;
   li {
     display: flex;
     align-items: center;
