@@ -4,6 +4,8 @@ import "./style/App.scss";
 import axios from "axios";
 import NewsCall from "./components/NewsCall";
 import Title from "./components/Title";
+import HoverIcon from "./components/HoverIcon";
+import classNames from "classnames";
 
 function App() {
   const [redditHead, setRedditHead] = useState([]);
@@ -42,8 +44,18 @@ function App() {
   return (
     <div className="App">
       <div className="buttons">
-        <button onClick={showRedditView}>r/Lebanon</button>
-        <button onClick={showNewsView}>The Guardian</button>
+        <button
+          onClick={showRedditView}
+          className={classNames(showReddit && "activeButton")}
+        >
+          r/Lebanon
+        </button>
+        <button
+          onClick={showNewsView}
+          className={classNames(showNews && "activeButton")}
+        >
+          The Guardian
+        </button>
       </div>
 
       <div className="articlesView">
@@ -77,6 +89,7 @@ function App() {
                               <em className="readMore"> read more</em>
                             </span>
                           )}
+                        {/* <HoverIcon /> */}
                         </li>
                       </a>
                       <hr />

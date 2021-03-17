@@ -9,10 +9,13 @@ h1 {
   font-family: $rowdiesFont;
   text-transform: uppercase;
   letter-spacing: 1rem;
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-shadow: 5px 5px 0px $softPink;
   color: $crimson;
   margin-bottom: 40px;
+  height: 100%;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 li {
@@ -56,9 +59,19 @@ hr {
     background: transparent;
     color: white;
     font-weight: bold;
-    transition: background-color 0.2s ease;
+    transition: 0.2s ease;
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+  .activeButton {
+    transition: 0.3s;
+    background-color: $crimson;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+    // color: black;
+
+    &:hover {
+      background-color: $crimson;
     }
   }
 }
