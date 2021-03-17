@@ -201,7 +201,6 @@ h1 {
   text-shadow: 5px 5px 0px #f1c5c5;
   color: #c70039;
   margin-bottom: 40px;
-  height: 100%;
   margin-bottom: 40px;
   margin-top: 40px;
 }
@@ -238,10 +237,12 @@ hr {
   display: -ms-flexbox;
   display: flex;
   margin: 20px auto;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70%;
 }
 
 .buttons button {
@@ -280,7 +281,7 @@ hr {
 
 .articlesView {
   background-color: white;
-  max-width: 75%;
+  width: 70vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

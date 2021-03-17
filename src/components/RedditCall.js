@@ -14,7 +14,6 @@ function RedditCall(props) {
         url: redditURL,
       }).then((res) => {
         setRedditData(res.data.data.children);
-        console.log(res);
       });
     };
     fetchData();
@@ -23,7 +22,6 @@ function RedditCall(props) {
   const sendResults = () => {
     if (redditData !== "") {
       props.onChange(redditData);
-      console.log("YAS");
     }
   };
 
