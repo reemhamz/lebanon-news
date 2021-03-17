@@ -32,7 +32,6 @@ function NewsCall(props) {
   const sendResults = () => {
     if (newsData !== "") {
         props.onChange(newsData);
-        console.log("YAS")
     }
   };
 

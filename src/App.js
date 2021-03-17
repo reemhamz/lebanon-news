@@ -2,35 +2,27 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./style/App.scss";
 import axios from "axios";
+import RedditCall from "./components/RedditCall";
 import NewsCall from "./components/NewsCall";
 import Title from "./components/Title";
-import HoverIcon from "./components/HoverIcon";
+// import HoverIcon from "./components/HoverIcon";
 import classNames from "classnames";
 
 function App() {
-  const [redditHead, setRedditHead] = useState([]);
+  const [redditData, setRedditData] = useState([]);
   const [newsData, setNewsData] = useState("");
   const [showReddit, setShowReddit] = useState(true);
   const [showNews, setShowNews] = useState(false);
-  // const [homeLink, setHomeLink] = useState("https://reddit.com");
-  const homeLink = "https://reddit.com";
+  // const [redditHomeLink, setHomeLink] = useState("https://reddit.com");
+  const redditHomeLink = "https://reddit.com";
+
+  const handleRedditCall = (reddit) => {
+    setRedditData(reddit);
+  };
 
   const handleNewsCall = (news) => {
     setNewsData(news);
-    console.log(news);
   };
-
-  // Reddit HTTP request
-  useEffect(() => {
-    const redditURL = `https://www.reddit.com/r/lebanon.json`;
-    axios({
-      method: "get",
-      url: redditURL,
-    }).then((res) => {
-      setRedditHead(res.data.data.children);
-    });
-  }, []);
-
   const showRedditView = () => {
     setShowReddit(true);
     setShowNews(false);
@@ -60,12 +52,12 @@ function App() {
 
       <div className="articlesView">
         <Title />
-
+        <RedditCall redditData={redditData} onChange={handleRedditCall} />
         <NewsCall newsData={newsData} onChange={handleNewsCall} />
         <ul className="newsResults">
           {showReddit
-            ? redditHead.map((data) => {
-                // console.log(data.data.title.length);
+            ? redditData.map((data) => {
+                console.log(data.data.title);
                 if (
                   data.data.link_flair_text === "Politics" ||
                   data.data.link_flair_text === "Economy"
@@ -73,7 +65,7 @@ function App() {
                   return (
                     <>
                       <a
-                        href={homeLink + data.data.permalink}
+                        href={redditHomeLink + data.data.permalink}
                         target="_blank"
                         rel="noreferrer noopener"
                       >
@@ -89,7 +81,6 @@ function App() {
                               <em className="readMore"> read more</em>
                             </span>
                           )}
-                        {/* <HoverIcon /> */}
                         </li>
                       </a>
                       <hr />
