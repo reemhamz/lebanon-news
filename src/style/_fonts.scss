@@ -12,12 +12,14 @@ h1 {
   font-size: 3rem;
   text-shadow: 5px 5px 0px $softPink;
   color: $crimson;
+  margin-bottom: 40px;
 }
 
 li {
   font-size: 1.3rem;
   list-style: none;
   font-family: $robotoFont;
+  transition: background-color 0.2s ease;
   &:hover {
     background-color: lighten($teal, 50%);
   }
@@ -28,9 +30,6 @@ a {
   color: inherit;
   padding: 0;
   margin: 0;
-  &:hover {
-    // color: green;
-  }
 }
 
 hr {
@@ -39,4 +38,27 @@ hr {
   padding: 0;
   margin: 0;
   background-color: $lightGrey;
+}
+.buttons {
+  display: flex;
+  margin: 20px auto;
+
+  align-items: center;
+
+  width: 70%;
+  button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 40px;
+    width: 150px;
+    margin-right: 20px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
 }

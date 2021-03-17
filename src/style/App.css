@@ -200,12 +200,15 @@ h1 {
   font-size: 3rem;
   text-shadow: 5px 5px 0px #f1c5c5;
   color: #c70039;
+  margin-bottom: 40px;
 }
 
 li {
   font-size: 1.3rem;
   list-style: none;
   font-family: "Roboto Slab", serif;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 li:hover {
@@ -227,51 +230,36 @@ hr {
   background-color: #ebecf1;
 }
 
-.rLebanonCall {
-  padding: 20px;
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+}
+
+.buttons button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 0;
   border-radius: 40px;
+  width: 150px;
+  margin-right: 20px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
-.rLebanonCall li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 80px;
+.buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.rLebanonCall li span {
-  margin-right: 30px;
-}
-
-input button {
-  color: blue;
-}
-
-body {
-  min-height: 100vh;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #11998e;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#38ef7d), to(#11998e));
-  background: linear-gradient(to right, #38ef7d, #11998e);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-size: 62.5%;
-}
-
-.App {
+.articlesView {
   background-color: white;
   width: 70%;
   display: -webkit-box;
@@ -288,6 +276,51 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
-  border-radius: 20px;
+  border-radius: 40px;
+}
+
+.newsResults li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  padding: 0 60px 0 20px;
+}
+
+.newsResults li [role="img"] {
+  margin-right: 50px;
+}
+
+.newsResults .readMore {
+  color: red;
+  font-size: 1rem;
+}
+
+.newsResults .readMore:hover {
+  color: blue;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #348f50;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#56b4d3), to(#348f50));
+  background: linear-gradient(to top, #56b4d3, #348f50);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 62.5%;
 }
 /*# sourceMappingURL=App.css.map */
